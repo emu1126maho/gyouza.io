@@ -1,0 +1,1059 @@
+@charset "UFT-8";
+
+/* 共通設定（タイプセレクタ）
+---------------------------------------- */
+:root{
+    --cl-r:#e22a00;
+    --cl-y: #ffe100;
+    --cl-w: #fff7f7;
+    --cl-b: #131a12;
+}
+
+html{
+    font-size: 100%;
+}
+
+body{
+  background-color:#FFE100;
+  font-family: "Zen Maru Gothic", sans-serif;
+  color: #131a12;
+  font-size: 1rem;
+  background-image: none;
+}
+
+section{
+    width: 100%;
+    /* margin: 2rem; */
+    margin: 2rem auto;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+    /* inherit...先祖のスタイルを継承する */
+}
+
+/* 確認　この辺りの設定がない */
+img{
+    max-width: 100%;
+    vertical-align: bottom;
+}
+ul{
+    list-style-type:none ;
+}
+main{
+    /* width: min(92%,900px); */
+    margin-inline:auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 1rem; 
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* スライドショー関連 */
+  .swiper {
+    position: relative;   /* 必須ではないけど安全 */
+    width: 100vw;         /* ビューポート幅いっぱい */
+    margin-left: calc(-1 * (100vw - 100%)/2); /* mainの余白を打ち消す */
+    height: 10rem;
+  }
+
+  .swiper-slide img {
+    height: 100%;          /* 高さに合わせる */
+    width: auto;           /* 横幅は自動で比率維持 */
+    max-width: 1200px;     /* 最大拡大幅を制限 */
+    object-fit: contain;   /* はみ出さず縦横比を保つ */
+    display: block;
+    margin: 0 auto;        /* 横方向中央寄せ */
+    border-radius: 3px;
+  }
+
+  /* トップに飛ぶボタン */
+  .to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;             /* Flexboxを使う */
+    flex-direction: column;    /* 縦方向に積む */
+    align-items: center;       /* 横中央揃え */
+    gap: 2px;                  /* 画像の間隔 */
+    padding: 2px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    opacity: 0;             /* 最初は非表示 */
+    pointer-events: none;   /* 非表示時はクリック不可 */
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+    
+  }
+  
+  .to-top.visible {
+    opacity: 1;             /* 200pxスクロールで表示 */
+    pointer-events: auto;   /* クリック可能にする */
+  }
+
+  .to-top img {
+    display: block;            /* ブロック化で縦に積まれる */
+    width: 50px;               /* 幅を固定 */
+    height: auto;              /* 縦横比を維持 */
+    opacity: 0.5;             /* 画像だけ半透明にする */
+    transition: opacity 0.3s ease; /* ホバー時に変化させたい場合 */
+  }
+
+  .to-top:hover img {
+    opacity: 1;                /* ホバーで不透明に */
+  }
+/* レイアウト系設定
+---------------------------------------- */
+/* コンテンツ幅 */
+.wrapper{
+    max-width: 1440px;
+    width: 92%;
+    /* width: 66.666%; */
+    margin-inline: auto;
+}
+
+.bottom{
+  /* max-width: 1440px; */
+  width: 92%;
+  max-width: 960px;
+  /* width: 66.666%; */
+  margin-inline: auto;
+}
+
+/* header */
+#top_p,
+#summary,
+#access,
+#shop,
+#news,
+#faq,
+#contact{
+  scroll-margin-top: 4rem;
+}
+
+h1 img{
+    max-height: 40px;
+    height: auto;
+    width: auto;
+}
+
+.global-nav {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 60px 10px 20px;
+    background: var(--cl-w);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    z-index: 1;
+}
+
+.nav-menu li a {
+    text-decoration: none;
+    color: var(--cl-b);
+    padding: 5px 0;
+}
+
+/* ハンバーガーメニュー */
+.ham-line{
+  display: block;
+  width: 30px;
+  height: 1px;
+  background-color: var(--cl-b);
+  margin: auto;
+  position: relative;
+  transition: all 0.5s ease-in-out;
+}
+
+.open .ham-line{
+  background-color: transparent;
+}
+
+.ham-line::before,
+.ham-line::after {
+    content:'';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: var(--cl-b);
+    position: absolute;
+    transition: inherit;
+}
+
+.ham-line::before{
+    top:-8px;
+}
+
+.open .ham-line::before{
+    transform: rotate(45deg);
+    top: 0;
+}
+
+.ham-line::after{
+    top:8px;
+}
+
+.open .ham-line::after{
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+  
+/* SP */
+.ham-btn{
+  width: 50px;
+  height: 50px;
+  /* border: 1px solid var(--cl-b); */
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.ham-btn span {
+  display: block;
+  height: 3px;
+  background: var(--cl-b);
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+.nav-menu{
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+    align-items: center;
+
+    flex-wrap: wrap;
+    position: fixed;
+    inset: 0 -100% 0 100%;
+    background-color: rgba(226, 42, 0, 0.9);
+    padding: 0;
+    padding-top: 15vh;
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    flex-direction: column;
+}
+
+.nav-menu img {
+  height: 1.5rem;
+  width: auto;
+}
+
+.open .nav-menu{
+    transform: translateX(-100%);
+    opacity: 1;
+}
+
+.sp-group {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+
+  }
+
+  /* SPはなにもしない */
+.nav-menu li:hover > .submenu {
+    display: none;
+}
+
+.submenu {
+    display: none;
+}
+
+/* トップホバー */
+
+/* SNSアイコン */
+nav ul li img {
+  transition: transform 0.3s;
+}
+
+nav ul li a:hover img {
+  transform: scale(1.2);
+}
+
+/* ハンバーガー */
+nav ul li{
+  transition: transform 0.3s;
+}
+
+.submenu li a:hover{
+  transform: scale(1.12);
+  transform-origin: center left;
+  color: #FFF7F7;
+}
+.nav-menu>li{
+  transition: transform 0.3s;
+}
+
+.nav-menu>li:hover{
+  transform: scale(1.08);
+  transform-origin: bottom center;
+}
+
+
+#summary {
+  background: var(--cl-w);
+  padding: 1rem;
+  border-radius: 1.875rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+#access {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+#access iframe{
+  width: auto;
+}
+
+#shop {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  text-align: center;
+}
+
+.detail_panda_red{
+  color: var(--cl-r);
+  font-size: 2rem;
+  font-weight: 900;
+  display: flex;
+  justify-content: center;
+}
+
+.detail_panda_red a{
+  text-decoration: underline;
+}
+
+/* 頂き物1 */
+h2{
+  text-align: center;
+  font-size: 2rem;
+  margin-block: 2rem;
+  font-weight: 900;
+}
+h2::before,h2::after{
+  content: "";
+  display: inline-block;
+  width: 50px;
+  height: 22px;
+  background-image: url(../images/Group.png) ;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  vertical-align: middle;
+  margin: 0px 10px;    
+}
+
+
+
+
+
+/* access */
+
+
+/* ここからがっちゃんこ */
+/* お知らせ */
+.bottom span{
+  color: #e22a00;
+}
+
+/* 確認　現在一応被りなしだが一応クラス名もつけるか？ */
+/* .news-item timeビフォーでもよさそう */
+li time::before{
+  content: "2030";
+  display: block;
+  font-size: 0.875em;
+  font-weight: normal;
+}
+.news-item{
+  border-bottom: 1px dotted #131a12;
+  padding-block: 15px;
+  display: flex;
+  /* gap: 0.5rem; */
+  gap: 15.29%;
+  align-items: flex-end;
+}
+.news-item time{
+  width: 70px; 
+  flex-shrink: 0; 
+  font-weight: bold;
+}
+
+.white{
+  background-color: #fff7f7;
+  padding: 15px 20px;
+}
+/* よくある質問 */
+
+#top-page h3 img{
+  width: 40px;
+  height: 41px;
+}
+
+#top-page h3{
+  display: flex;
+  flex-direction:row;
+  font-size: 1.5em;
+  color: #e22a00;
+  gap: 14px;
+}
+#top-page details p{
+  padding-left: 20px;
+  font-size: 0.875em;
+}
+#top-page summary.question{
+  font-weight: 500;
+}
+#top-page details {
+  margin: 10px 0;
+  border: 1px solid #e22a001a;
+  border-radius: 6px;
+  padding: 8px 12px;
+  background-color: #ffe100;
+}
+
+/* 見出し部分（クリックできる箇所） */
+#top-page summary {
+  cursor: pointer;
+  font-weight: bold;
+  list-style: none;
+}
+#top-page summary::-webkit-details-marker {
+  display: none;
+}
+
+#top-page .faq-item summary {
+  position: relative; /* ::after の基準にする */
+}
+/* カスタムマーカー（▶ 矢印） */
+#top-page .faq-item summary::after {
+  content: "▶";
+  position: absolute;   /* ← 右端に固定 */
+  right: 0;             /* 右端に寄せる */
+  top: 50%;             
+  transform: translateY(-50%); /* 垂直中央に */
+  /* display: inline-block; */
+  color: #e22a00;
+  font-size: 0.9em;
+  transition: transform 0.3s ease;
+}
+
+/* 開いたときに矢印を下向きに回転 */
+#top-page .faq-item[open] summary::after {
+  /* transform: rotate(90deg); */
+  transform: translateY(-50%) rotate(90deg); /* 下向きに回転 */
+}
+
+/* 回答部分 */
+#top-page .faq-item p {
+  margin-top: 6px;
+  line-height: 1.6;
+}
+
+/* summaryの基本設定 */
+#top-page details > summary {
+  position: relative; /* ← マーカー位置の基準にする */
+  cursor: pointer;
+  list-style: none;
+  transition: color 0.3s;
+  padding-right: 30px; /* マーカーぶん右に余白 */
+}
+
+/* デフォルトマーカーを消す */
+#top-page summary::-webkit-details-marker {
+  display: none;
+}
+
+/* ＋マーカー */
+#top-page details > summary::after {
+  content: "+";
+  position: absolute;
+  right: 8px; /* ← 右端に配置 */
+  top: 50%;
+  transform: translateY(-50%);
+  color: #e22a00;
+  font-size: 1.4em;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+/* 開いた時は−マーカー */
+#top-page details.outer[open] > summary::after {
+  content: "-";
+  color: rgba(226, 42, 0, 0.7);
+}
+  /* ホバー */
+  #top-page summary {
+  color: #131a12;
+  transition: color 0.3s;
+}
+
+#top-page summary:hover {
+  color: rgba(226, 42, 0, 0.7); 
+  /* transform: scale(1.2); */
+}
+#top-page summary h3 {
+  color: #e22a00;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s;
+}
+
+#top-page summary:hover h3 {
+  color: rgba(226, 42, 0, 0.4); 
+}
+
+.form-he{
+  transition: color 0.3s;
+}
+.form-he:hover{
+  color:rgba(19, 26, 18, 0.5);
+}
+/* panndaホバー */
+#top-page details.outer summary h3 img {
+transition: transform 0.3s;
+}
+
+#top-page details.outer summary h3:hover img {
+transform: scale(1.2);
+}
+
+.detail_panda_red a{
+  transition: color 0.3s;
+}
+
+.detail_panda_red a:hover {
+  color: rgba(226, 42, 0, 0.7); 
+
+}
+
+/* お問い合わせ */
+.form-auto{
+width: 92%;
+max-width: 960px;
+background-color: rgb(255,247,247,.5);
+border-radius: 12px;
+box-shadow: 0 2px 6px rgba(19, 26, 18, 0.2);
+margin: 0 auto;
+}
+
+form {
+width: 100%;
+max-width: 340px;
+margin: 0 auto;
+padding: 20px 10px;
+}
+
+/* ラベルと入力欄 */
+label {
+display: block;
+font-weight: 500;
+color: #131a12;
+margin-bottom: 4px;
+}
+
+input, textarea {
+width: 100%;
+padding: 10px;
+border: 1px solid #131a12;
+font-size: 1em;
+background-color: #fff;
+}
+.form-group input{
+margin-bottom: 36px;
+}
+
+textarea {
+min-height: 100px;
+}
+
+/* 送信ボタン */
+.form-button{
+text-align: center;
+margin-top: 10px;
+}
+.form-button input[type="submit"] {
+background-color: #e22a00;
+color: #fff7f7;
+border: none;
+border-radius: 20px;
+padding: 20px 80px;
+font-size: 1.5em;
+cursor: pointer;
+width: 80%;
+margin-top: 10px;
+box-shadow: 0 2px 6px rgba(19, 26, 18, 0.2);
+}
+
+.form-button input[type="submit"]:hover {
+background-color: rgba(226, 42, 0, 0.4);
+}
+label span{
+font-size: 0.875em;
+margin-left: 4px;
+}
+input::placeholder,
+textarea::placeholder {
+font-size: 0.875em;   
+color: #888;        
+}
+/* footer */
+/* .footer-in{
+width: 50%;
+margin: 130px auto 10px;
+} */
+
+footer{
+padding: 30px 0 0;
+text-align: center;
+position: relative;
+}
+
+footer ul {
+list-style: none;
+display: flex;
+justify-content: center;
+gap: 50px;
+margin: 15px 0 10px 0;
+padding: 10px 0;
+}
+
+footer ul li img {
+width: 20px;
+height: 20px;
+transition: transform 0.3s;
+}
+
+footer ul li a:hover img {
+transform: scale(1.2);
+}
+
+.footer-2{
+background-color: #fff7f7;
+padding-bottom: 1rem;
+}
+
+/* ここまでがっちゃんこ */
+
+/* ここから店舗一覧ページ */
+/* shop 餃子の種類のマーク　説明 */
+.category{
+	text-align: center;
+	background-color: #FFF7F7;
+	border-radius: 20px;
+	padding: 20px 40px;
+	margin-top: 30px;
+	display: inline-block;
+}
+.category-flex{
+	display: flex;
+	gap: 40px;
+	margin-bottom: 10px;
+}
+.fry-c,.grill-c,.boil-c{
+	font-size: 15px;
+    width: 30px;      
+    height: 30px;       
+    line-height: 30px;
+    color: #FFF7F7;
+    border-radius: 50%;
+	text-align: center;
+    font-weight: bold;     
+}
+
+.grill-c{
+	background-color: #E22A00;
+}
+.fry-c{
+	background-color: #131A12;
+}
+.boil-c{
+	background-color: #0846FF;
+}
+
+.c-flex{
+	display: flex;
+	line-height: 30px;
+	gap: 5px;
+}
+
+/* shop 店舗紹介 */
+
+#shop-page{
+  text-align: center;
+}
+
+#shop-page ul.nav-menu{
+  text-align: left;
+}
+
+#shop-page ul{
+	list-style: none;
+}
+.menu-card{
+	width: 345px;
+	margin: 50px 0 50px 0;
+	text-align: center;
+	align-items: center;
+}
+
+.product-text,.store-text{
+	margin-top: 20px;
+	font-size: 14px;
+}
+.store-text a{
+	margin-top: 10px;
+	display: block;
+  color: #E22A00;
+  text-decoration: underline ;
+  font-weight: bold;
+}
+
+#shop-page h3{
+	color: #e22a00;
+	height: 40px;
+	line-height: 40px;
+	font-size: 20px;
+}
+#shop-page h4{
+	color:#131A12;
+	font-size: 24px;
+	border-bottom: #131A12 solid;
+}
+.tab img{
+	width: auto;
+	height: 24px;
+	display: inline-block;
+}
+
+#shop-page img{
+	vertical-align: bottom;
+}
+
+.area ul{
+	margin-top: 20px;
+}
+
+.grid{
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* shop 餃子の種類のマーク */
+.fry,.grill,.boil{
+	font-size: 20px;
+	color: #FFF7F7;
+	display:block;
+    width: 40px;      
+    height: 40px;       
+    line-height: 40px;
+    color: #FFF7F7;
+    border-radius: 50%;
+	text-align: center;
+    font-weight: bold;
+}
+.grill{
+	background-color: #E22A00;
+}
+.fry{
+	background-color: #131A12;
+}
+.boil{
+	background-color: #0846FF;
+}
+
+.card-flex{
+	text-align: center;
+	display: flex;
+	gap: 20px;
+}
+
+/* タブ切り替え */
+/*tabの形状*/
+.tab{
+	display: flex;
+	flex-wrap: wrap;
+}
+.tab li{
+	flex: 1;
+	width: 345px;
+}
+.tab li a{
+	display: block;
+	background:#dbdde3;
+	padding:10px 20px;
+	text-decoration: none;
+	color: #131A12;
+}
+
+.tab-center{
+	margin: 0 2px;
+}
+
+/*liにactiveクラスがついた時の形状*/
+.tab li.active a{
+	background:#FFF7F7;
+}
+
+/*エリアの表示非表示と形状*/
+.area {
+	display: none;/*はじめは非表示*/
+	opacity: 0;/*透過0*/
+	background: #FFF7F7;
+	padding: 20px 20px;
+	height: 220px;
+}
+
+/*areaにis-activeというクラスがついた時の形状*/
+.area.is-active {
+    display: block;/*表示*/
+    animation-name: displayAnime;/*ふわっと表示させるためのアニメーション*/
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes displayAnime{
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+
+}
+
+
+/* footer */
+
+
+
+/* 個別のスタイル
+---------------------------------------- */
+/* メディアクエリ
+---------------------------------------- */
+
+@media(min-width:768px){
+  /* 頂き物2 */
+  .wrapper{
+    width: 66.67%;
+    max-width:980px;
+    margin:auto;
+  }
+  h2::before,h2::after{
+    /* width: 200px; */
+    width: 100px;
+    height: 20px;
+    background-repeat: repeat-x;
+  }
+
+  header {
+    position: fixed;      /* 画面に固定 */
+    top: 0;               /* 上端に固定 */
+    left: 0;
+    width: 100%;          /* 横幅いっぱいに広げる */
+    background-color: #fff;
+    z-index: 1000;        /* コンテンツの上に出す */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 少し影をつけると浮いて見える */
+  }
+  /* 頂き物2 */
+
+  main{
+    margin-top: 5rem; 
+  }
+
+  .global-nav{
+    padding: 10px 20px;
+  }
+
+  /* ナビメニュー横並び（PC用） */
+  .nav-menu {
+    flex-wrap: nowrap;
+    position: static;
+    inset: auto;
+    background: none;
+    background-color: transparent;
+    padding-top: 0;
+    transition: none;
+    opacity: 1;
+    flex-direction: row;
+  }
+
+  .nav-menu li {
+    /* サブメニューの配置の基準 */
+    position: relative;
+  }
+
+    /* サブメニュー */
+  .submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    list-style: none;
+    /* background: var(--cl-r); */
+    background-color: rgba(226, 42, 0, 0.9);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    padding: 1rem 0;
+    min-width: 10rem;
+  }
+  .submenu li a {
+      padding: 5px 20px;
+      display: block;
+  }
+
+  .nav-menu img {
+    /* inline の余白をなくす */
+    display: block;
+    height: 1rem;
+    width: auto;
+  }
+
+  .sp-group {
+    justify-content: flex-start;
+  }
+
+  /* ハンバーガー非表示 */
+  .ham-btn {
+    display: none;
+  }
+
+  /* PCはホバーで表示 */
+  .nav-menu li:hover > .submenu {
+    display: block;
+  }
+
+
+  #summary {
+    padding: 1rem 1.875rem;
+  }
+
+  #access {
+    padding: 1rem 1.875rem;
+  }
+
+  /* ここからがっちゃんこ */
+  .bottom{
+    font-size: 1.5rem;
+  }
+    /* お知らせ */
+    .white p{
+      font-size: 1.5rem;
+    }
+  
+  
+  /* 確認　現在一応被りなしだが一応クラス名もつけるか？ */
+  /* .news-item timeビフォーでもよさそう */
+    li time::before {
+      display: inline-block;   /* 横に並べる */
+      margin-right: 10px;       /* 年と日付の間に余白 */
+    }
+    .news-item time{
+      width: 200px; 
+      flex-shrink: 0; 
+      font-weight: bold;
+    }
+    li.news-item{
+      padding-left: 30px;
+      /* gap: 2em; */
+    }
+    
+  
+    /* よくある */
+    #top-page h3{
+      font-size: 1.5rem;
+    }
+    #top-page summary{
+      font-size: 0.875em;
+    }
+    #top-page details p{
+      padding-left: 30px;
+      font-size: 0.75em;
+  }
+  
+  /* 問い合わせ */
+    .form-auto{
+      font-size: 16px;
+    }
+  
+    /* でっかいパンダ */
+      #top-page{
+            background-color: #FFE100;
+            /* background-image: url('/images/BIGpanda1.png'); */
+            background-image: url(../images/BIGpanda1.png);
+             /* 画像パス */
+            background-repeat: no-repeat;
+            background-position: bottom left; /* 下部左に配置 */
+        }
+        
+      .footer-in {
+        font-size: 16px;
+        width: fit-content;
+        background-color: #FFE100;
+        padding: 1rem;
+      }
+      .news-item p{
+        font-size: 1rem;
+      }
+
+  /* ここまでがっちゃんこ */
+}
+
+@media(min-width:1000px){
+
+  h2::before,h2::after{
+    width: 200px;
+  }
+
+
+  /* 店舗一覧 */
+  .grid{
+		display: grid;
+		grid-template-columns: repeat(2,1fr);
+		justify-items: center;
+		/* margin: 0 calc(50% - 50vw);
+		width: 100vw; */
+	}
+	#shop-page{
+		background-color: #FFE100;
+		background-image: url('../images/BIGpanda2.png'); /* 画像パス */
+		background-repeat: no-repeat;
+		background-position: bottom right; /* 下部中央に配置 */
+	}
+	#shop-page h2{
+		padding-top: 80px;
+	}
+}
+
+@media(max-width:1000px){
+	.grid{
+		display: flex;
+    flex-direction: column;
+    align-items: center;
+	}
+}
