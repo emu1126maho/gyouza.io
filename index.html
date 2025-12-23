@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ふくおか餃子FES</title>
+
+    <!-- ファビコン -->
+    <link rel="shortcut icon" href="./images/favicon.svg" type="image/x-icon">
+
+    <!-- リセットCSS -->
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
+
+    <!-- Googleフォント (Zen Maru Gothic)-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <!-- css読み込み -->
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
+    <!-- 自作CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- <link rel="stylesheet" href="./css/style_s.css"> -->
+
+</head>
+<body id="top-page">
+    <header id="top">
+        
+        <nav class="global-nav">
+            <a href="./index.html">
+                <h1><img src="./images/logo_E.svg" alt=""></h1>
+            </a>
+            <!-- ハンバーガーボタン -->
+            <button class="ham-btn" id="hamBtn" type="button">
+                <span class="ham-line">
+                </span>
+            </button>
+            <ul class="nav-menu">
+                <li class="has-submenu">
+                    <a href="./index.html">トップページ</a>
+                    <ul class="submenu">
+                        <li><a href="#top_p">トップ</a></li>
+                        <li><a href="#summary">概要</a></li>
+                        <li><a href="#access">アクセス</a></li>
+                        <li><a href="#shop">店舗情報</a></li>
+                        <li><a href="#news">お知らせ・最新</a></li>
+                        <li><a href="#faq">よくある質問</a></li>
+                        <li><a href="#contact">お問い合わせ</a></li>
+                    </ul>
+                </li>
+                <li><a href="./shop.html">出店店舗</a></li>
+                <li class="sp-group">
+                    <a href="#"><img src="./images/insta_icon.svg" alt=""></a>
+                    <a href="#"><img src="./images/x_icon.svg" alt=""></a>
+                </li>
+            </ul>
+        </nav>
+
+    </header>
+    
+
+    <main>
+
+        <picture id="top_p">
+            <source media="(max-width: 768px)" srcset="./images/main_sp.png">
+            <source media="(min-width: 769px)" srcset="./images/main_pc.png">
+            <img src="./images/main_sp.png" alt="main画像">
+        </picture> 
+        
+
+        <section id="summary" class="wrapper">
+            <p>福岡の餃子文化が一堂に集結！ 定番のご当地餃子から、驚きの創作餃子まで、ここはまるで餃子のテーマパーク。 香ばしく焼き上げられた皮のパリッとした食感、ジューシーな肉汁、個性あふれるタレのハーモニー… ひとくち食べるたびに、新しい味、新しい驚き、新しい発見が待っています。 さあ、あなたもこの美味しい冒険に出かけませんか？</p>
+            <p>夜にはライトアップ、屋台の雰囲気を楽しめる「ナイトFES」も実施予定！</p>
+            <p>開催日時
+                <time datetime="2030-04-27">2030.4.27</time>(日) ～ <time datetime="2030-05-12">5.12</time>(日)</p>
+            <p>
+            平日 <time datetime="16:00">16:00</time> ~ <time datetime="22:00">22:00</time>
+            土日祝 <time datetime="11:00">11:00</time> ~ <time datetime="22:00">22:00</time>
+            最終入場受付 <time datetime="21:00">21:00</time>
+            L.O. <time datetime="21:15">21:15</time>
+            </p>
+            <p>入場料無料 ※飲食代別途（食券、電子マネー利用可能）</p>
+
+        </section>
+
+
+        <section id="access" class="wrapper">
+            <h2>アクセス</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.4550479353684!2d130.39413!3d33.5934958!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3541918916ac1a97%3A0x38ef1af8385772cc!2z6ZW35rWc5YWs5ZyS!5e0!3m2!1sja!2sjp!4v1761724997115!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <p>会場：長浜公園</p>
+            <p>
+                地下鉄天神駅から徒歩10分<br>
+                <br>
+                西鉄天神駅から徒歩10分<br>
+                <br>
+                西鉄バス<br>
+                「長浜一丁目」徒歩2分<br>
+                「福祉センター前［浜の町病院入口］」徒歩2分
+            </p>
+
+            
+        </section>
+
+        <section id="shop" class="wrapper">
+            <h2>メニュー</h2>
+
+            <div class="swiper">
+                <ul class="swiper-wrapper">
+                    <li class="swiper-slide"><a href="./shop.html"><img src="images/shop/shop01.png" alt=""></a></li>
+                    <li class="swiper-slide"><a href="./shop.html"><img src="images/shop/shop02.png" alt=""></a></li>
+                    <li class="swiper-slide"><a href="./shop.html"><img src="images/shop/shop03.png" alt=""></a></li>
+                    <li class="swiper-slide"><a href="./shop.html"><img src="images/shop/shop04.png" alt=""></a></li>
+                    <li class="swiper-slide"><a href="./shop.html"><img src="images/shop/shop05.png" alt=""></a></li>
+                    <li class="swiper-slide"><a href="./shop.html"><img src="images/shop/shop06.png" alt=""></a></li>
+                </ul>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+
+            <div class="detail_panda_red">
+                <a href="./shop.html">詳細はこちら</a><img src="./images/panda_red.svg" alt="ショップ案内パンダ">
+            </div>
+        </section>
+
+<!-- ここからがっちゃんこ -->
+<div class="bottom">
+    <section id="news">
+        <h2>お知らせ</h2>
+        <ul class="white">
+            <li class="news-item">
+                <time datetime="2030-02-25">2.25(月)</time>
+                <p>出店者インタビュー <br> 博多区で人気の「博多ぎょうざ堂」</p>
+            </li>
+            <li class="news-item">
+                <time datetime="2030-02-23">2.23(土)</time>
+                <p>お得な前売り券は公式アプリで</p>
+            </li>
+            <li class="news-item">
+                <time datetime="2030-02-16">2.16(土)</time>
+                <p>ふくおか餃子FES開催決定!</p>
+            </li>
+        </ul>
+    </section>
+    <section id="faq">
+        <h2>よくある質問</h2>
+        <details class="outer">
+            <summary>
+                <h3>
+                    <img src="./images/pabdaQA.png" alt="パンダ">
+                    来場について
+                </h3>
+            </summary>
+            <details class="faq-item">
+                <summary class="question"><span>Q</span> 入場料はかかりますか？</summary>
+                <p>入場は無料です。<br>どなたでもご自由にお楽しみいただけます。飲食の購入は各店舗でお支払いください。</p>
+            </details>
+            <details class="faq-item">
+                <summary class="question"><span>Q</span> 開催時間を教えてください。</summary>
+                <p>開催時間は各日10:00〜20:00を予定しています。<br>最終日は終了時間が早まる場合があります。</p>
+            </details>
+            <details class="faq-item">
+                <summary class="question"><span>Q</span> 雨天の場合も開催されますか？</summary>
+                <p>雨天決行ですが、荒天の場合は安全を考慮し中止となる場合があります。 <br>最新情報はSNSでお知らせします。</p>
+            </details>
+            <details class="faq-item">
+                <summary class="question"><span>Q</span> 支払い方法を教えてください。</summary>
+                <p>現金のほか、主要な電子マネー・QRコード決済がご利用いただけます。</p>
+            </details>
+        </details>
+        <details class="outer">
+            <summary>
+                <h3>
+                    <img src="./images/pabdaQA.png" alt="パンダ">
+                    会場について
+                </h3>
+            </summary>
+            <details class="faq-item">
+                <summary class="question"><span>Q</span> 喫煙所はありますか？</summary>
+                <p>会場内は全面禁煙ですが、敷地外に指定の喫煙エリアを設けています。<br>スタッフの案内に従ってご利用ください。</p>
+            </details>
+            <details class="faq-item">
+                <summary class="question"><span>Q</span> 授乳室やおむつ替えスペースはありますか？</summary>
+                <p>はい、メインゲート付近に授乳室とおむつ替え台を設置しています。 <br>小さなお子様連れでも安心してご利用いただけます。</p>
+            </details>
+            <details class="faq-item">
+                <summary class="question"><span>Q</span> 駐車場はありますか？</summary>
+                <p>専用駐車場はございません。公共交通機関のご利用をおすすめします。</p>
+            </details>
+            <details class="faq-item">
+                <summary class="question"><span>Q</span> ペットを連れて入場できますか？</summary>
+                <p>混雑が予想されるため、ペットの同伴はご遠慮ください。 <br>ただし補助犬は入場可能です。</p>
+            </details>
+            <details class="faq-item">
+                <summary class="question"><span>Q</span> ゴミはどうすればよいですか？</summary>
+                <p>会場内に分別ゴミ箱を設置しています。リサイクルにご協力をお願いします。</p>
+            </details>
+        </details>
+        <details class="outer">
+            <summary>
+                <h3>
+                    <img src="./images/pabdaQA.png" alt="パンダ">
+                    その他
+                </h3>
+            </summary>
+            <details class="faq-item">
+                <summary class="question"><span>Q</span> 忘れ物をした場合はどうすればよいですか？</summary>
+                <p>会場本部でお預かりしています。 <br>イベント終了後は実行委員会までお問い合わせください。</p>
+            </details>
+            <details class="faq-item">
+                <summary class="question"><span>Q</span> トイレはどこにありますか？</summary>
+                <p>会場内に複数の仮設トイレを設置しています。マップの「トイレ」アイコンをご確認ください。</p>
+            </details>
+            <details class="faq-item">
+                <summary class="question"><span>Q</span> SNSで写真を投稿しても良いですか？</summary>
+                <p>はい、大歓迎です！公式ハッシュタグ「#ふくおか餃子FES」をつけて投稿してください。</p>
+            </details>
+            <details class="faq-item">
+                <summary class="question"><span>Q</span> 開催中止の場合はどうなりますか？</summary>
+                <p>安全を最優先に判断し、中止の場合は公式サイトとSNSでお知らせします。</p>
+            </details>
+            <details class="faq-item">
+                <summary class="question"><span>Q</span> 問い合わせ先を教えてください。</summary>
+                <p class="form-he"><a href="#contact">「お問い合わせ」ページのフォームまたは事務局メール宛にご連絡ください。</a></p>
+            </details>
+        </details>
+    </section>
+    <section id="contact">
+        <h2 data-en="contact">お問い合わせ</h2>
+        <div class="form-auto">
+            <form action="#" method="post" id="form">
+                <div class="form-group">
+                    <label for="your-name">お名前 <span>※必須</span></label>
+                    <input type="text" name="your-name" id="your-name" placeholder="名前を入力してください" required>
+                </div>
+                <div class="form-group">
+                    <label for="your-tel">電話番号</label>
+                    <input type="tel" name="your-tel" id="your-tel" placeholder="000-0000-0000">
+                </div>
+                <div class="form-group">
+                    <label for="your-email">アドレス<span>※必須</span></label>
+                    <input type="email" name="your-email" id="your-email"  placeholder="gyoza_fan@example.jp" required>
+                </div>
+                <div>
+                    <label for="message">お問合内容</label>
+                    <textarea name="message" id="message" placeholder="メッセージを入力してください"></textarea>
+                </div>
+                <div class="form-button">
+                    <input type="submit" value="送信">
+                </div>
+            </form>
+        </div>
+    </section>
+</div>
+
+<!-- ここまでがっちゃんこ -->
+
+    </main>
+
+    <!-- 重要でない要素なのであとで下の位置にやるかも -->
+    <button class="to-top" aria-label="ページの先頭に戻る">
+        <img src="./images/mdi_arrow-up-bold.svg" alt="">
+        <img src="./images/logo_K.svg" alt="">
+    </button>
+    
+    <footer>
+        <div class="bottom footer-in">
+            <p>主催:ふくおか餃子FES実行委員会</p>
+            <p>制作協力:九州餃子部</p>
+            <p>協賛:創造社リカレントスクール 福岡校</p>
+        </div>
+        <div class="footer-2">
+            <ul>
+                <li><a href="#"><img src="./images/insta_icon.svg" alt="Instagram"></a></li>
+                <li><a href="#"><img src="./images/x_icon.svg" alt="X"></a></li>
+            </ul>
+            <div class="footer-small"><small>&copy;2025 ふくおか餃子FES実行委員会. All Rights Reserved.</small></div>
+        </div>
+    </footer>
+
+
+    <!-- Swiper js -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <!-- 自作JS -->
+    <script src="./js/script.js"></script>
+</body>
+</html>
